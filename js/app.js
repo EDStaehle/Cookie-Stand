@@ -100,7 +100,7 @@ let createFooter = function () {
     foot.appendChild(totalPerHour);
     storeTotals += total;
   }
-  let overallTotal = document.createElement('th');
+  let overallTotal = document.createElement('td');
   overallTotal.innerHTML = storeTotals;
   foot.appendChild(overallTotal);
 };

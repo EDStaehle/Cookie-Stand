@@ -4,12 +4,20 @@ th, td, tfoot, tr {
   font-size: 2vw;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+tfoot :last-child{
+  display: flex;
+  justify-content: center;
+  border: none;
+}
 table{
   margin-top: 50PX;
   background-color: rgb(255, 179, 0);
 }
 footer{
+  width: 100%;
   background-color: #333;
+  position: relative;
+  bottom: -694px;
 }
 
 .contact{
