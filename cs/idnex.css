@@ -1,26 +1,130 @@
-header{
-  margin-top: 20px;
-  border: 5px solid black;
-  text-align: center;
-  color: black;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 2vw;
-  font-weight: bold;
-  background-color: rgb(255, 166, 0);
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 }
-body{
-  background-color: aqua;
+
+.wrapper p {
+  color: aliceblue;
+  font-size: 2rem;
+  justify-content: space-between;
+  margin-bottom: 70px;
 }
-#links{
-  color: black;
-  background-color: rgb(255, 166, 0);
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 2vw;
-  position: absolute;
-  left: 1000px;
-  top: 700px;
-  text-align: center;
+
+
+.logo {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 10px solid rgb(231, 98, 9);
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
 }
-img{
-  z-index: -1;
+
+.logo img {
+  max-width: 70%
+}
+
+.auto_slider_imgs {
+  outline: 1px solid red;
+  width: 720px;
+  height: 720px;
+  overflow-x: hidden;
+  margin-bottom: 100px;
+  background-color: rgb(231, 98, 9);
+  
+}
+.auto_slider_img_content{
+  display: block;
+}
+
+.auto_slider_img_content img {
+  width: 720px;
+  height: 360px;
+ 
+}
+.auto_slider_img_content p{
+  width: 720px;
+  
+  
+}
+
+.auto_slider_img_content {
+  display: flex;
+  animation-name: slide;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.auto_slider_img_content:hover {
+  animation-play-state: paused;
+}
+
+@keyframes slide {
+  14% {
+    transform: translateX(0);
+  }
+
+  20%, 28% {
+    transform: translateX(-720px);
+  }
+
+  42% {
+    transform: translateX(-1440px);
+  }
+
+  56% {
+    transform: translateX(-2160px);
+  }
+
+  70% {
+    transform: translateX(-2880px);
+  }
+
+  84% {
+    transform: translateX(-3600px);
+  }
+
+  98% {
+    transform: translateX(0);
+  }
+}
+footer{
+  background-color: #333;
+}
+
+.contact{
+  display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+ margin-bottom: 10px;
+ color: aliceblue;
+}
+.support{
+  width: 200px;
+}
+.seattle{
+  width: 200px;
+
+}
+.tokyo{
+  width: 200px;
+}
+.dubai{
+  width: 200px;
+}
+.paris{
+  width: 200px;
+}
+.lima{
+  width: 200px;
 }

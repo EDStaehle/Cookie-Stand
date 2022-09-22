@@ -1,39 +1,40 @@
 
-body{
-  background-color: #c59245;
-}
-header{
-  margin-bottom: 15px;
-  border: 5px;
-  border-style: dashed;
-  border-color: black;
-}
-section{
-  margin-bottom: 15px;
-  border: 5px dashed black;
-  font-size: 1vw;
-}
-h1, h2{
-  color: crimson;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 2vw;
-  padding: 1vw;
-
-}
-#saleTotals{
-  margin-bottom: 2vw;
-  border: .2vw dashed rgb(153, 0, 0);
-}
-h5{
-position:relative;
-left: 20px;
-bottom: 20px;
-color: crimson;
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-font-size: 1vw;
-}
 th, td, tfoot, tr {
   border: 2px solid black;
   font-size: 2vw;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+table{
+  margin-top: 50PX;
+  background-color: rgb(255, 179, 0);
+}
+footer{
+  background-color: #333;
+}
+
+.contact{
+  display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+ margin-bottom: 10px;
+ color: aliceblue;
+}
+.support{
+  width: 200px;
+}
+.seattle{
+  width: 200px;
+
+}
+.tokyo{
+  width: 200px;
+}
+.dubai{
+  width: 200px;
+}
+.paris{
+  width: 200px;
+}
+.lima{
+  width: 200px;
 }
