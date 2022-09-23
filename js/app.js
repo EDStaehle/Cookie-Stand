@@ -2,6 +2,8 @@
 
 let hoursOpen = ['6 am', '7 am', '8 am', '9am', '10 am ', '11 am', '12 am', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm', '8 pm'];
 let table = document.createElement('table');
+
+let myForm = document.getElementById('myForm');
 let storeArr = [];
 
 function StoreLoc(location, minHr, maxHr, avg) {
@@ -9,7 +11,7 @@ function StoreLoc(location, minHr, maxHr, avg) {
   this.minHr = minHr;
   this.maxHr = maxHr;
   this.avg = avg;
-  this.sales_array = this.sales();
+  this.salesArray = this.sales();
   storeArr.push(this);
 }
 
@@ -19,12 +21,12 @@ StoreLoc.prototype.ranNumCust = function () {
 };
 
 StoreLoc.prototype.sales = function () {
-  let sales_array = [];
+  let salesArray = [];
   for (let i = 0; i < hoursOpen.length; i++) {
     let hourlySales = Math.floor(this.avg * this.ranNumCust());
-    sales_array.push(hourlySales);
+    salesArray.push(hourlySales);
   }
-  return sales_array;
+  return salesArray;
 };
 
 
@@ -35,9 +37,9 @@ StoreLoc.prototype.render = function () {
   locRow.innerHTML = this.location;
   rows.appendChild(locRow);
 
-  for (let i = 0; i < this.sales_array.length; i++) {
+  for (let i = 0; i < this.salesArray.length; i++) {
     let newData = document.createElement('td');
-    newData.innerHTML = this.sales_array[i];
+    newData.innerHTML = this.salesArray[i];
     rows.appendChild(newData);
   }
   let totalsRow = document.createElement('th');
@@ -60,9 +62,9 @@ let locTotals = function (array) {
   }
   return sum;
 };
-
+let main = document.querySelector('main');
 const createTable = function () {
-  document.body.appendChild(table);
+  main.appendChild(table);
   table.style.width = '100vw';
   table.style.border = '2px solid black';
 };
@@ -93,7 +95,7 @@ let createFooter = function () {
   for (let i = 0; i < hoursOpen.length; i++) {
     let total = 0;
     for (let m = 0; m < storeArr.length; m++) {
-      total += storeArr[m].sales_array[i];
+      total += storeArr[m].salesArray[i];
     }
     let totalPerHour = document.createElement('td');
     totalPerHour.innerHTML = total;
@@ -113,4 +115,23 @@ const tableDisplayed = function () {
   createFooter();
 };
 tableDisplayed();
+function deleteTFoot(){
+  document.getElementById('table').deleteTFoot();
+}
 
+function newStoreData(event) {
+
+  event.preventDefault();
+
+  let location = document.getElementById('storeLocation').value;
+  let minHr = Number(document.getElementById('minCusPerHr').value);
+  let maxHr = Number(document.getElementById('maxCusPerHr').value);
+  let avg = Number(document.getElementById('avgCusPerHr').value);
+  console.log(location, minHr, maxHr, avg);
+  let storeLocation = new StoreLoc(location, minHr, maxHr, avg);
+  storeLocation.render();
+  deleteTFoot();
+  createFooter();
+  myForm.reset();
+}
+myForm.addEventListener('submit', newStoreData);
