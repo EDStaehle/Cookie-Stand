@@ -9,10 +9,10 @@
 }
 
 .wrapper p {
-  color: aliceblue;
   font-size: 2rem;
   justify-content: space-between;
   margin-bottom: 70px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 
@@ -27,6 +27,7 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 25px;
+  color: blue;
 }
 
 .logo img {
@@ -53,8 +54,10 @@
 }
 .auto_slider_img_content p{
   width: 720px;
-  
-  
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 30px;
+  color: rgb(96, 226, 251);
+
 }
 
 .auto_slider_img_content {

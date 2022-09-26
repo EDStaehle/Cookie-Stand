@@ -2,7 +2,8 @@
 th, td, tfoot, tr {
   border: 2px solid black;
   font-size: 2vw;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family:Arial, Helvetica, sans-serif
+  
 }
 tfoot :last-child{
   display: flex;
@@ -45,4 +46,8 @@ footer{
 }
 .lima{
   width: 200px;
+}
+button{
+  all:unset;
+  cursor: pointer;
 }
