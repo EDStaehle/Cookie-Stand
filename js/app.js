@@ -95,12 +95,13 @@ let createFooter = function () {
   for (let i = 0; i < hoursOpen.length; i++) {
     let total = 0;
     for (let m = 0; m < storeArr.length; m++) {
+      console.log(total,'break', storeArr[i]);
       total += storeArr[m].salesArray[i];
     }
     let totalPerHour = document.createElement('td');
     totalPerHour.innerHTML = total;
-    foot.appendChild(totalPerHour);
     storeTotals += total;
+    foot.appendChild(totalPerHour);
   }
   let overallTotal = document.createElement('td');
   overallTotal.innerHTML = storeTotals;
@@ -116,7 +117,7 @@ const tableDisplayed = function () {
 };
 tableDisplayed();
 function deleteTFoot(){
-  document.getElementById('table').deleteTFoot();
+  document.querySelector('table').deleteTFoot();
 }
 
 function newStoreData(event) {
